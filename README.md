@@ -1,4 +1,4 @@
-# PersonalityDiscrimination_Chatting
+# Personalize_Chatting_Bot
 Personality Representation &amp; Personality based Chatting   
 
 This is a project of the "三个咕咕呆写出了一群bug"(Three heros & A bunch of bug) in Google AI ML Winter Camp. Thanks to my team members!  
@@ -42,3 +42,4 @@ This folder contains the front-end program for chatting machine.
 The model outputs both personality scores and dialogue response.
 
 <img src="https://github.com/Walleclipse/PersonalityDiscrimination_Chatting/raw/master/demo/chatbot2.jpg" width="300" >
+
