@@ -1,17 +1,21 @@
-# Personalize_Chatting_Bot
-Personality Representation &amp; Personality based Chatting   
+# Personalize_Chatting_Bot  
 
-This is a project of the "三个咕咕呆写出了一群bug"(Three heros & A bunch of bug) in Google AI ML Winter Camp. Thanks to my team members!  
+The project is compelted in Google AI Winter Camp. There are another [repo](https://github.com/Walleclipse/PersonalityDiscrimination_Chatting) and [repo](https://github.com/xiaotinghe/PCM) from my teamates.
 
-[MBTI](https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator) Personality can be judged by one's declaration or dialogue.   If chatting machine can to learn the speaker's personality, they might be able to make better dialogues.    
-According to this idea, we make a simple chatting machine. Because owe used simple model and a few dialogue data, the result is not very good, but the idea of chatting machine with personality analysis may be worthwhile.   
-There is another [repo](https://github.com/xiaotinghe/PCM) from my teamate.
+The motivation of our project is that when we communicate with others, our conversations are not only based on the logic and context, but also our personality. People tend to chat with whom has similar characters. So we wonder if we can create a chatting bot with personality that can provide more enjoyable user experiences.
+
+Our project consists of two parts. Firstly, analyze one’s personality basing on current and historic dialog using MBTI personality classification indicators. Secondly, concatenate the personality analysis above with current dialog embedding as chatting generation model’s input. Then seq-2-seq model is used to generate chatting response with personality.
+
+## Method 
+The overview of our model is:
+
+In the discrimination model, we use the Kaggle MBTI dataset which includes one’s last 50 posts (on-line behaviors) and personality label from which we extracted 30 posts randomly. We fed biLSTM model (self-attention mechanism based) with Elmo pre-trained model’s embedding.
+
+In the generation model, we concatenate the dialog embedding with personality analysis from the discrimination model as the model’s input, and use seq-to-seq model to generate the response.
 
 <img src="https://github.com/Walleclipse/PersonalityDiscrimination_Chatting/raw/master/demo/chatbot1.png" width="400" >
 
-More details shown in 'PersonalityDiscrimination_Chatting.pdf' 
 
-## Method 
 
 This work mainly consists of two parts, 1. Personality Discriminator: discriminate the speaker's personality according to some input sentences. 2. Chatting Machine: Ggenerate the corresponding respose according to the input sentence and the speaker's personality. 
 
@@ -28,14 +32,6 @@ We used ELMo pretrained model, Bi-LSTM encoder and self Attention Mechanisms.
 Given a post X= (x_1,x_2,..,x_n ) and a personality type p of the response
 to be generated, the goal is to generate a response Y= (y_1,y_2,..,y_n )
 that is coherent with the personality type p.
-
-### About Code
-MBTI_discriminator_torch.py ,  MBTI_discriminator_bert.py , MBTI_discriminator_lgb.ipynb       
-All three files are MBTI discrimination model. The first file contains the main model.  
-dialogue.py     
-seq2seq conversation model   
-front    
-This folder contains the front-end program for chatting machine.    
 
 ## Results
 
