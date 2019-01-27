@@ -8,7 +8,7 @@ Our project consists of two parts. Firstly, analyze one’s personality basing o
 
 ## Method 
 The overview of our model is:
-<img src="https://github.com/shuhanfan/Personalize_Chatting_Bot/img/overview.png" width="400" >
+<img src="Personalize_Chatting_Bot/img/overview.png" width="400" >
 
 In the discrimination model, we use the Kaggle MBTI dataset which includes one’s last 50 posts (on-line behaviors) and personality label from which we extracted 30 posts randomly. We fed biLSTM model (self-attention mechanism based) with Elmo pre-trained model’s embedding.
 
